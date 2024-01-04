@@ -48,6 +48,6 @@ docker run -it -p 50922:22/tcp -e TRUSTED_CAS='https://trusted-ca-hostname/ssh-c
 
 ### Test
 ```
-ssh -i $HOME/.ssh/id_rsa -i $HOME/.ssh/id_rsa.pub.signed -p 50922 trusted@localhost
+ssh -i $HOME/.ssh/id_rsa -i $HOME/.ssh/id_rsa-cert.pub -p 50922 trusted@localhost
 ```
 
