@@ -5,7 +5,7 @@ Dynamically create users on the fly when [TrustedUserCAKeys](https://man.openbsd
 Whether deploying a fleet of servers, vms, or containers, sometimes it is necessary to troubleshoot these from the inside. No matter how all-encompassing your observability is, no matter how comprehensive your remote logging is, the fact remains – troubleshooting is a hands-on process and requires direct access to the problem area.  
 
 ## Scope
-Provide an ssh sign-in solution which allows a per user audit trail without relying on an external party for account provisioning.
+Provide an ssh sign-in solution which allows a per user audit trail without relying on an external party for the account provisioning.
 > Note: Setting up an SSH CA Signer is not in scope of this project. I intend to write about it [here](https://github.com/maxfortun/ssh-ca-signer-oidc).
 
 ## Challenges
