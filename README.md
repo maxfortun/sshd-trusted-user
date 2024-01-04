@@ -15,10 +15,10 @@ LDAP works great as a source of truth, but may, in itself, be the point of failu
 
 Individual accounts require either a build-time knowledge of who is authorized, or a mechanism for adding and removing accounts across the fleet.  
 
-Group accounts are easy to set up ahead of time, but have a less granular audit trail from individual accounts, and do also require a similar synchronization mechanism for authorized_keys.  
+Group accounts are easy to set up ahead of time, but have a less granular audit trail from individual accounts, and do, also, require a similar synchronization mechanism for `authorized_keys`.  
 
 ## Solution
-Luckily, OpenSSH supports TrustedUserCAs. Which means that we can combine the 3 above mentioned techniques and create individual accounts on the fly without depending on LDAP.   
+Luckily, OpenSSH supports TrustedUserCAs. Which means that we can combine the 3 above mentioned techniques and create the individual accounts on the fly without depending on LDAP.   
 
 1. Have your SSH CA Signer specify `trusted` as a principal.
 ```
