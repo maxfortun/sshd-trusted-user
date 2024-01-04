@@ -1,5 +1,5 @@
 # sshd-trusted-user
-Dynamically create users on the fly when [TrustedUserCAKeys](https://man.openbsd.org/sshd_config#TrustedUserCAKeys) are used
+Dynamically create users on the fly when using [TrustedUserCAKeys](https://man.openbsd.org/sshd_config#TrustedUserCAKeys) 
 
 ## Premise
 Whether deploying a fleet of servers, vms, or containers, sometimes it is necessary to troubleshoot these from the inside. No matter how all-encompassing your observability is, no matter how comprehensive your remote logging is, the fact remains – troubleshooting is a hands-on process and requires direct access to the problem area.  
