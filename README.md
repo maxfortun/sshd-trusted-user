@@ -29,7 +29,7 @@ Luckily, OpenSSH supports TrustedUserCAs. Which means that we can combine the 3 
    $HOME/.ssh/id_rsa
 ```
 2. Create the `trusted` account on the system.
-1. Configure the `trusted` account to create users if missing, then `su` into those accounts. 
+1. Configure the `trusted` account to create users if missing, then `login` into those accounts. 
 1. ssh into the system.
 ```
 ssh -i $HOME/.ssh/id_rsa -i $HOME/.ssh/id_rsa-cert.pub trusted@system
