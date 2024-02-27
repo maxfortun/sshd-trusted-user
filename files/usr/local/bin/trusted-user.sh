@@ -1,6 +1,6 @@
 #!/bin/ash -e
 
-sshd_pid=$(ps | grep '^\s*[0-9]*\s*'$LOGNAME | grep -v grep | grep "sshd: $LOGNAME@${SSH_TTY/\/dev\/}" | awk '{ print $1 }')
+sshd_pid=$(ps | grep '^\s*[0-9]*\s*'$LOGNAME | grep -v grep | grep "sshd: $LOGNAME@${SSH_TTY/\/dev\/}\$" | awk '{ print $1 }')
 sshd_ppid=$(grep -o 'sshd\[[0-9]*]: User child is on pid '$sshd_pid /var/log/messages)
 sshd_ppid=${sshd_ppid##*[}
 sshd_ppid=${sshd_ppid%%]*}
