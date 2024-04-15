@@ -8,7 +8,11 @@ user=$(grep -o 'sshd\['$sshd_ppid']: Accepted publickey for .*' /var/log/message
 
 grep -q ^$user: /etc/passwd || sudo adduser -D -G wheel $user
 
-exec sudo login -f $user
+if [ -z "$SSH_ORIGINAL_COMMAND" ]; then
+	exec sudo login -f $user
+else
+	exec sudo -u $user $SSH_ORIGINAL_COMMAND 
+fi  
 
 exit
 
