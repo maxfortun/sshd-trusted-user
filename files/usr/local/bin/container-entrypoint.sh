@@ -6,6 +6,7 @@ cat >> /etc/ssh/sshd_config << EOT
 LogLevel DEBUG
 PermitRootLogin prohibit-password
 TrustedUserCAKeys /etc/ssh/trusted-user-ca-keys.pem
+ExposeAuthInfo yes
 CASignatureAlgorithms ^ssh-rsa
 PubkeyAcceptedKeyTypes ^ssh-rsa,ssh-rsa-cert-v01@openssh.com
 
@@ -22,12 +23,11 @@ $SD/pull-ssh-cas.sh
 
 /sbin/syslogd
 /usr/bin/ssh-keygen -A
-/usr/sbin/sshd
 
-cmd=/bin/ash
 if [ -n "$1" ]; then
-	cmd=$1
-	shift
+	/usr/sbin/sshd
+	exec "$@" 
+else
+	/usr/sbin/sshd -D
 fi
 
-exec "$cmd" "$@" 

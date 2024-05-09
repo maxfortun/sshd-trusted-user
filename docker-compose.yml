@@ -1,0 +1,12 @@
+services:
+  sshd-trusted-user:
+    container_name: sshd-trusted-user-${tag:-latest}
+    image: sshd-trusted-user-${tag:-latest}
+    environment:
+      TRUSTED_CAS: "$TRUSTED_CAS"
+    build:
+      context: .
+      args:
+        DOCKER_BUILDKIT: 1
+    ports:
+      - '22/tcp'

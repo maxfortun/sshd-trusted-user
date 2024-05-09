@@ -46,6 +46,12 @@ docker build -t sshd-trusted-user .
 docker run -it -p 50922:22/tcp -e TRUSTED_CAS='https://trusted-ca-hostname/ssh-ca-signer/ca.pub' sshd-trusted-user
 ```
 
+or
+
+```
+TRUSTED_CAS='https://trusted-ca-hostname/ssh-ca-signer/ca.pub' docker compose up --build
+```
+
 ### Test
 ```
 ssh -i $HOME/.ssh/id_rsa -i $HOME/.ssh/id_rsa-cert.pub -p 50922 trusted@localhost
